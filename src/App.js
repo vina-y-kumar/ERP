@@ -1,38 +1,40 @@
-import React, { useState } from 'react';
-import LeftSidebar from './components/Sidebar';
-import Main from './components/Main';
-import Bottom from './components/Bottom';
-import Data from './components/Data';
+// App.js
+import React from 'react';
+import { BrowserRouter as Router, Route, Link,  Routes } from 'react-router-dom';
+import Dashboard from './Dashboard';
+import ProductsManagement from './ProductsManagement';
+import OrdersManagement from './Orders';
+import "./App.css";
 
-
-const App = () => {
-  const [SidebarWidth, setLeftSidebarWidth] = useState(200);
-  const [mainSize, setMainSize] = useState({ width: 600, height: 400 });
-  const [bottomSize, setBottomSize] = useState({ width: 600, height: 200 });
-
-  const handleLeftSidebarResize = ({ width }) => {
-    setLeftSidebarWidth(width);
-  };
-
-  const handleMainResize = ({ width, height }) => {
-    setMainSize({ width, height });
-  };
-
-  const handleBottomResize = ({ width, height }) => {
-    setBottomSize({ width, height });
-  };
-
+function App() {
   return (
-    <div style={{ display: 'flex', height: '100vh' }}>
-      <LeftSidebar width={SidebarWidth.width} onResize={handleLeftSidebarResize} />
-      <div style={{ display: 'flex', flexDirection: 'column', flex: 1 }}>
-        <Main width={mainSize.width} height={mainSize.height} onResize={handleMainResize} />
-        <Bottom width={bottomSize.width} height={bottomSize.height} onResize={handleBottomResize} />
-        
+    <Router>
+       <div className="container">
+        <header className="header">
+          <h1>Modern ERP System</h1>
+        </header>
+        <nav className="navbar">
+          <ul>
+            <li>
+              <Link to="/">Dashboard</Link>
+            </li>
+            <li>
+              <Link to="/products">Products</Link>
+            </li>
+            <li>
+              <Link to="/orders">Orders</Link>
+            </li>
+          </ul>
+        </nav>
+
+        <Routes>
+          <Route path="/" element={<Dashboard/>} />
+          <Route path="/products" element={<ProductsManagement/>} />
+          <Route path="/orders" element={<OrdersManagement/>} />
+        </Routes>
       </div>
-      {/* <Data/> */}
-    </div>
+    </Router>
   );
-};
+}
 
 export default App;
