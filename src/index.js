@@ -4,11 +4,13 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Component from './Home';
+import Dashboar from './Db';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <App/>
+    {/* <Dashboar/> */}
   </React.StrictMode>
 );
 
