@@ -28,10 +28,10 @@ const OrdersManagement = () => {
 
   return (
     <div className="container mx-auto p-4">
-      <h1 className="text-3xl font-bold mb-4 text-center">Orders Management</h1>
+      <h1 className="text-3xl font-bold mb-4 text-center text-white">Orders Management</h1>
       <div className="grid grid-cols-1 gap-4">
         {orders.map((order) => (
-          <div key={order.id} className="bg-white p-4 rounded-lg shadow">
+          <div key={order.id} className="text-white p-4 rounded-lg shadow border border-gray-300">
             <p className="text-lg font-semibold">Order ID: {order.id}</p>
             <p className="text-md">Customer: {order.customer}</p>
             <p className="text-md">Date: {order.date}</p>

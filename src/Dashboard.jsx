@@ -1,11 +1,10 @@
+// Dashboard.js
 import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Dashboard = ({ totalProducts, totalOrders }) => {
   return (
-    <>    
-    <br/>
-    <h1 className="text-3xl font-bold mb-6 text-center">Dashboard</h1>
+    <>    <h1 className="text-3xl font-bold mb-6 text-center text-white">Dashboard</h1>
 
   <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-1 gap-4 p-6">
     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
